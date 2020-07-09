@@ -22,9 +22,16 @@ const FlowerState = (props) => {
   //Get Flowers
 
   const getFlowers = async () => {
+    const config = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
+
     try {
       const res = await axios.get(
-        'https://flowerinblack-backend.herokuapp.com/api/flowers'
+        'https://flowerinblack-backend.herokuapp.com/api/flowers',
+        config
       );
 
       console.log(res.data);
@@ -39,16 +46,10 @@ const FlowerState = (props) => {
   //Add Flower
 
   const addFlower = async (flower) => {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
     try {
       const res = await axios.post(
         'https://flowerinblack-backend.herokuapp.com/api/flowers',
-        flower,
-        config
+        flower
       );
       dispatch({
         type: ADD_FLOWER,
