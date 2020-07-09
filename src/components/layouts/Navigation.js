@@ -15,9 +15,6 @@ const Navigation = () => {
             <Nav.Link href='/' className='links'>
               Home
             </Nav.Link>
-            <Nav.Link href='#link' className='links'>
-              Owner
-            </Nav.Link>
           </Nav>
           <Nav className='navbar mr-5 '>
             {url.pathname.indexOf('/flower') >= 0 && (
