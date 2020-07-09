@@ -48,7 +48,7 @@ const Flower = () => {
   try {
     return (
       <Fragment>
-        <div>
+        <div className='flower-container'>
           {flowerDistance.map((flower) => (
             <Fragment>
               <Tree
@@ -120,8 +120,8 @@ const Flower = () => {
                     },
                   ],
                 }}
-                height={250}
-                width={500}
+                height={200}
+                width={400}
               />
 
               <DeleteFlower flower={flower} />

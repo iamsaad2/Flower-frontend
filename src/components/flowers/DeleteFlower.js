@@ -17,7 +17,7 @@ const DeleteFlower = ({ flower }) => {
 
   return (
     <Fragment>
-      <Button variant='outline-danger' onClick={onDelete}>
+      <Button variant='outline-danger' className='button' onClick={onDelete}>
         Delete
       </Button>
     </Fragment>

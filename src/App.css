@@ -46,3 +46,7 @@ span {
   text-shadow: 0 1px 4px black;
   float: right;
 }
+
+.button {
+  margin-right: 2rem;
+}
