@@ -16,8 +16,14 @@ const Navigation = () => {
               Home
             </Nav.Link>
           </Nav>
-          <Nav className='navbar'>
-            <NavDropdown title='Dates' id='basic-nav-dropdown '>
+          <Nav className='navbar mr-5'>
+            {url.pathname.indexOf('/flower') >= 0 && (
+              <Nav.Link>
+                <AddFlower />
+              </Nav.Link>
+            )}
+
+            <NavDropdown title='Dates' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/flower'>All Flowers</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href='/flower/june-28th'>
@@ -30,11 +36,6 @@ const Navigation = () => {
                 July 12th
               </NavDropdown.Item>
             </NavDropdown>
-            {url.pathname.indexOf('/flower') >= 0 && (
-              <Nav.Link>
-                <AddFlower />
-              </Nav.Link>
-            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
