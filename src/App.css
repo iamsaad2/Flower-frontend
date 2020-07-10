@@ -49,4 +49,20 @@ span {
 
 .button {
   margin-right: 2rem;
+  height: 10vh;
+  align-self: center;
+}
+
+.flower-container {
+  display: flex;
+}
+
+.flower-name {
+  text-align: center;
+  font-weight: 500;
+  color: #212529;
+}
+
+.tree {
+  width: 20rem;
 }
