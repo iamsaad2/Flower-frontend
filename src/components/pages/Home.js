@@ -10,8 +10,8 @@ const Home = () => {
       <Carousel>
         <Carousel.Item>
           <Carousel.Caption className=''>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Black Lotus Savings Club</h3>
+            <p>Sou-Sou Savings Club</p>
           </Carousel.Caption>
 
           <img
@@ -28,8 +28,8 @@ const Home = () => {
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Save Money</h3>
+            <p>Join Our Club to Save Money</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -40,10 +40,8 @@ const Home = () => {
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
+            <h3>Flower in Black</h3>
+            <p>All gifts are due by Sunday 5pm</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
