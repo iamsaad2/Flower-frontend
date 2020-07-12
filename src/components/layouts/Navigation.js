@@ -35,6 +35,10 @@ const Navigation = () => {
               <NavDropdown.Item href='/flower/july-12th'>
                 July 12th
               </NavDropdown.Item>
+
+              <NavDropdown.Item href='/flower/july-19th'>
+                July 19th
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
