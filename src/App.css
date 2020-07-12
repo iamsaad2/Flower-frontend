@@ -14,7 +14,7 @@
 
 .node circle {
   fill: #f3f3ff;
-  stroke: #581b98;
+  stroke: #0b6b83;
   stroke-width: 2px;
 }
 
@@ -32,7 +32,7 @@
 
 path.link {
   fill: none;
-  stroke: #9c1de7;
+  stroke: #1398b9;
   stroke-width: 1.5px;
 }
 
@@ -51,16 +51,16 @@ span {
   height: 6vh;
   align-self: center;
   margin-bottom: 1rem;
-  margin-right: 1rem;
-  width: 4vw;
+  margin-right: 5rem;
+  width: 5rem;
 }
 
 .edit-button {
   height: 6vh;
   align-self: center;
   margin-bottom: 1rem;
-  margin-right: 5rem;
-  width: 4vw;
+  margin-right: 1rem;
+  width: 4rem;
 }
 
 .flower-container {

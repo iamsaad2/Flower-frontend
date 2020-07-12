@@ -15,11 +15,7 @@ const EditFlower = ({ flower }) => {
 
   return (
     <Fragment>
-      <Button
-        variant='outline-danger'
-        className='edit-button'
-        onClick={onClick}
-      >
+      <Button variant='outline-info' className='edit-button' onClick={onClick}>
         Edit
       </Button>
     </Fragment>

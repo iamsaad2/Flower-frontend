@@ -8,7 +8,7 @@ const Navigation = () => {
   return (
     <Fragment>
       <Navbar bg='light' expand='lg'>
-        <Navbar.Brand href='#home'>Flower in Black</Navbar.Brand>
+        <Navbar.Brand href='/'>Flower in Black</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>

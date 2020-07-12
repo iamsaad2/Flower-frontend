@@ -104,8 +104,8 @@ const Flower = () => {
                   />
                 </div>
                 <div className='action-buttons'>
-                  <DeleteFlower flower={flower} />
                   <EditFlower flower={flower} />
+                  <DeleteFlower flower={flower} />
                 </div>
                 <p className='flower-name'>{flower.name}</p>
               </div>
