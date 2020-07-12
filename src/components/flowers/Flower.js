@@ -3,6 +3,7 @@ import Tree from 'react-tree-graph';
 
 import FlowerContext from '../../context/flower/flowerContext';
 import DeleteFlower from './DeleteFlower';
+import EditFlower from './EditFlower';
 
 const Flower = () => {
   const flowerContext = useContext(FlowerContext);
@@ -102,10 +103,12 @@ const Flower = () => {
                     width={400}
                   />
                 </div>
+                <div className='action-buttons'>
+                  <DeleteFlower flower={flower} />
+                  <EditFlower flower={flower} />
+                </div>
                 <p className='flower-name'>{flower.name}</p>
               </div>
-
-              <DeleteFlower flower={flower} />
             </Fragment>
           ))}
         </div>

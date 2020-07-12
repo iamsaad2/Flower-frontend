@@ -7,7 +7,15 @@ import FlowerContext from '../../context/flower/flowerContext';
 const AddFlower = () => {
   const flowerContext = useContext(FlowerContext);
 
-  const { addFlower, clearCurrent, current } = flowerContext;
+  const {
+    addFlower,
+    clearCurrent,
+    current,
+    updateFlower,
+    show,
+    handleShow,
+    handleClose,
+  } = flowerContext;
 
   useEffect(() => {
     if (current !== null) {
@@ -34,11 +42,6 @@ const AddFlower = () => {
       });
     }
   }, [flowerContext, current]);
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [flower, setFlower] = useState({
     name: '',
@@ -80,13 +83,20 @@ const AddFlower = () => {
     date,
   } = flower;
 
-  const onChange = (e) =>
+  const onChange = (e) => {
     setFlower({ ...flower, [e.target.name]: e.target.value });
+
+    console.log(current);
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    addFlower(flower);
+    if (current === null) {
+      addFlower(flower);
+    } else {
+      updateFlower(flower);
+    }
 
     clearAll();
   };

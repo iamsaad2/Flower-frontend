@@ -8,6 +8,11 @@ import {
   ADD_FLOWER,
   CLEAR_CURRENT,
   DELETE_FLOWER,
+  UPDATE_FLOWER,
+  SET_CURRENT,
+  FLOWER_ERROR,
+  HANDLE_CLOSE,
+  HANDLE_SHOW,
 } from '../types';
 
 const FlowerState = (props) => {
@@ -15,6 +20,8 @@ const FlowerState = (props) => {
     flowers: [],
 
     current: null,
+    error: null,
+    show: false,
   };
 
   const [state, dispatch] = useReducer(flowerReducer, initialState);
@@ -82,6 +89,40 @@ const FlowerState = (props) => {
     }
   };
 
+  // Set Current Contact
+  const setCurrent = (flower) => {
+    dispatch({ type: SET_CURRENT, payload: flower });
+  };
+
+  //Update Flowers
+  const updateFlower = async (flower) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    try {
+      const res = await axios.put(
+        `https://flowerinblack-backend.herokuapp.com/api/flowers/${flower._id}`,
+        flower,
+        config
+      );
+      dispatch({
+        type: UPDATE_FLOWER,
+        payload: res.data,
+      });
+
+      console.log('this works');
+    } catch (err) {
+      dispatch({
+        type: FLOWER_ERROR,
+        payload: err.response.msg,
+      });
+
+      console.error(err.response.msg);
+    }
+  };
+
   // Filter Flowers
 
   const editDistance = (s1, s2) => {
@@ -108,6 +149,20 @@ const FlowerState = (props) => {
     return costs[s2.length];
   };
 
+  // Set Show
+
+  const handleClose = () => {
+    dispatch({
+      type: HANDLE_CLOSE,
+    });
+  };
+
+  const handleShow = () => {
+    dispatch({
+      type: HANDLE_SHOW,
+    });
+  };
+
   return (
     <FlowerContext.Provider
       value={{
@@ -118,6 +173,11 @@ const FlowerState = (props) => {
         clearCurrent,
         deleteFlower,
         editDistance,
+        updateFlower,
+        setCurrent,
+        handleClose,
+        handleShow,
+        show: state.show,
       }}
     >
       {props.children}

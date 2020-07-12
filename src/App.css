@@ -48,13 +48,24 @@ span {
 }
 
 .button {
-  margin-right: 2rem;
-  height: 10vh;
+  height: 6vh;
   align-self: center;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  width: 4vw;
+}
+
+.edit-button {
+  height: 6vh;
+  align-self: center;
+  margin-bottom: 1rem;
+  margin-right: 5rem;
+  width: 4vw;
 }
 
 .flower-container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .flower-name {
@@ -65,4 +76,8 @@ span {
 
 .tree {
   width: 20rem;
+}
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
 }
