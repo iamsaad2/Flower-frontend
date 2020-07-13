@@ -8,6 +8,7 @@ import {
   FLOWER_ERROR,
   HANDLE_CLOSE,
   HANDLE_SHOW,
+  AUTHENTICATE,
 } from '../types';
 
 export default (state, action) => {
@@ -50,6 +51,12 @@ export default (state, action) => {
       return {
         ...state,
         current: action.payload,
+      };
+
+    case AUTHENTICATE:
+      return {
+        ...state,
+        isAuthenticated: true,
       };
 
     case HANDLE_CLOSE:

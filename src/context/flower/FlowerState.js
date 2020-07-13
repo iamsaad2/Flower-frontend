@@ -13,6 +13,7 @@ import {
   FLOWER_ERROR,
   HANDLE_CLOSE,
   HANDLE_SHOW,
+  AUTHENTICATE,
 } from '../types';
 
 const FlowerState = (props) => {
@@ -22,6 +23,7 @@ const FlowerState = (props) => {
     current: null,
     error: null,
     show: false,
+    isAuthenticated: false,
   };
 
   const [state, dispatch] = useReducer(flowerReducer, initialState);
@@ -163,6 +165,12 @@ const FlowerState = (props) => {
     });
   };
 
+  const setAuthentication = () => {
+    dispatch({
+      type: AUTHENTICATE,
+    });
+  };
+
   return (
     <FlowerContext.Provider
       value={{
@@ -178,6 +186,8 @@ const FlowerState = (props) => {
         handleClose,
         handleShow,
         show: state.show,
+        isAuthenticated: state.isAuthenticated,
+        setAuthentication,
       }}
     >
       {props.children}

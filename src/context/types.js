@@ -8,3 +8,4 @@ export const SET_CURRENT = 'SET_CURRENT';
 export const FLOWER_ERROR = 'FLOWER_ERROR';
 export const HANDLE_CLOSE = ' HANDLE_CLOSE';
 export const HANDLE_SHOW = 'HANDLE_SHOW';
+export const AUTHENTICATE = 'AUTHENTICATE';

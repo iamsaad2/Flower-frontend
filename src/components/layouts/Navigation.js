@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import AddFlower from '../flowers/AddFlower';
+import Password from '../pages/Password';
 
 const Navigation = () => {
   const url = new URL(window.location);
@@ -8,7 +9,7 @@ const Navigation = () => {
   return (
     <Fragment>
       <Navbar bg='light' expand='lg'>
-        <Navbar.Brand href='/'>Flower in Black</Navbar.Brand>
+        <Navbar.Brand href='/'>Black Lotus Savings</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
@@ -19,6 +20,7 @@ const Navigation = () => {
           <Nav className='navbar mr-5'>
             {url.pathname.indexOf('/flower') >= 0 && (
               <Nav.Link>
+                <Password />
                 <AddFlower />
               </Nav.Link>
             )}

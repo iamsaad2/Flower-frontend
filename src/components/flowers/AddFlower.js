@@ -85,8 +85,6 @@ const AddFlower = () => {
 
   const onChange = (e) => {
     setFlower({ ...flower, [e.target.name]: e.target.value });
-
-    console.log(current);
   };
 
   const onSubmit = (e) => {
