@@ -18,6 +18,7 @@ const Password = () => {
     e.preventDefault();
     if (pass === 'flower') {
       handleClose();
+    } else {
     }
   };
 

@@ -284,6 +284,7 @@ const AddFlower = () => {
                 value={date}
                 onChange={onChange}
               >
+                <option>July 19th</option>
                 <option>July 12th</option>
                 <option>July 5th</option>
                 <option>June 28th</option>
