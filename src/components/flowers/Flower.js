@@ -15,7 +15,9 @@ const Flower = () => {
   let flowerDistance = [];
 
   flowers.map((f) => {
-    if (editDistance(f.date, url.pathname) <= 10) flowerDistance.push(f);
+    if (editDistance(f.date, url.pathname) <= 9) flowerDistance.push(f);
+
+    console.log(editDistance(f.date, url.pathname));
   });
 
   useEffect(() => {
