@@ -25,6 +25,8 @@ const Navigation = () => {
               </Nav.Link>
             )}
 
+            <Nav.Link href='/directory'>Directory</Nav.Link>
+
             <NavDropdown title='Dates' id='basic-nav-dropdown'>
               <NavDropdown.Item href='/flower'>All Flowers</NavDropdown.Item>
               <NavDropdown.Divider />
