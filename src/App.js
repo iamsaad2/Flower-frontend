@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import FlowerState from './context/flower/FlowerState';
+import Password from './components/pages/Password';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route exact path='/' component={Home} />
             <Route path='/flower' component={Flower} />
             <Route path='/directory' component={Directory} />
+            <Route path='/password' component={Password} />
           </Switch>
         </Fragment>
       </Router>

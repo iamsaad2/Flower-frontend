@@ -2,7 +2,12 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const Password = () => {
+import { withRouter, useLocation } from 'react-router-dom';
+
+const Password = ({ history }) => {
+  let currentLocation = useLocation();
+
+  console.log(currentLocation);
   const [authenticate, setAuthenticate] = useState(false);
 
   const [password, setPassword] = useState({
@@ -18,6 +23,7 @@ const Password = () => {
     e.preventDefault();
     if (pass === 'flower') {
       handleClose();
+      history.push('/flower');
     } else {
     }
   };
@@ -34,7 +40,13 @@ const Password = () => {
   };
 
   useEffect(() => {
-    if (!localStorage.getItem('authenticate')) handleShow();
+    // if (!localStorage.getItem('authenticate')) handleShow();
+
+    if (
+      currentLocation.pathname === '/password' &&
+      !localStorage.getItem('authenticate')
+    )
+      handleShow();
   }, []);
 
   return (
@@ -67,4 +79,4 @@ const Password = () => {
   );
 };
 
-export default Password;
+export default withRouter(Password);

@@ -3,6 +3,8 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import AddFlower from '../flowers/AddFlower';
 import Password from '../pages/Password';
 
+import { Link } from 'react-router-dom';
+
 const Navigation = () => {
   const url = new URL(window.location);
 
@@ -16,14 +18,20 @@ const Navigation = () => {
             <Nav.Link href='/' className='links'>
               Home
             </Nav.Link>
+            {url.pathname.indexOf('/flower') >= 0 && (
+              <Nav.Link href='/password'>Owner</Nav.Link>
+            )}
           </Nav>
           <Nav className='navbar mr-5'>
-            {url.pathname.indexOf('/flower') >= 0 && (
-              <Nav.Link>
-                <Password />
-                <AddFlower />
-              </Nav.Link>
-            )}
+            {url.pathname.indexOf('/flower') >= 0 &&
+              localStorage.getItem('authenticate') && (
+                <Fragment>
+                  <Nav.Link>
+                    <Password />
+                    <AddFlower />
+                  </Nav.Link>
+                </Fragment>
+              )}
 
             <Nav.Link href='/directory'>Directory</Nav.Link>
 
